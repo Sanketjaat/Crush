@@ -1,1 +1,33 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crush</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="game=container">
+        <div class="box">
+            <h1>Do you love me?</h1>
+            <button id="target">No</button>
+            <button id="yes">Yes</button>
+        </div>
+    </div>
+    <script>
+        const target = document.getElementById('target');
+        function moveTarget() {
+            const maxWidth=400;
+            const maxHeight =400;
+            const randomX=Math.floor(Math.random() * maxWidth);
+            const randomY=Math.floor(Math.random() * maxHeight);
+            target.style.left = randomX + 'px';
+            target.style.top = randomY + 'px';
+            target.addEventlistener('mouseenter', function() {
+                moveTarget();
+            })
+            }
+    </script>
+</body>
+</html>
